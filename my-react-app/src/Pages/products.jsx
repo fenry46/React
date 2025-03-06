@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import CardProduct from "../components/Fragments/CardProduct";
 import Button from "../components/Elements/Button";
+import Counter from "../components/Fragments/Counter";
 
 const products = [
   {
@@ -74,7 +75,7 @@ const ProductsPage = () => {
           Logout
         </Button>
       </div>
-      <div className="flex justify-center py-5">
+      <div className="flex justify-center py-5 mb-5">
         <div className="w-4/6 flex flex-wrap">
           {products.map((product) => (
             <CardProduct key={product.id}>
@@ -132,6 +133,9 @@ const ProductsPage = () => {
             </table>
           </ul>
         </div>
+      </div>
+      <div className="mt-5 flex justify-center">
+        <Counter></Counter>
       </div>
     </Fragment>
   );

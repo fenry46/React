@@ -5,10 +5,23 @@ class Counter extends React.Component {
     this.state = {
       count: 0,
     };
+    console.log("constructur");
+  }
+  // Pengambilan data dari API
+  componentDidMount() {
+    this.setState({ count: 1 });
+    console.log("component did mount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("component did update");
+    if (this.state.count === 10) {
+      this.setState({ count: 0 });
+    }
   }
   render() {
     return (
-      <div className="flex item-center">
+      <div className="flex items-center">
         <h1 className="mr-5">{this.state.count}</h1>
         <button
           className="bg-black text-white p-3"
@@ -16,6 +29,7 @@ class Counter extends React.Component {
         >
           +
         </button>
+        {console.log("render")}
       </div>
     );
   }
